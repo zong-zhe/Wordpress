@@ -1,2 +1,6 @@
 # Wordpress
-Demo Wordpress in KCL.
+The Demo Wordpress in KCL
+
+# Dependencies
+
+
