@@ -1,7 +1,7 @@
-import base.pkg.kusion_models.kube.frontend
-import base.pkg.kusion_models.kube.frontend.storage
-import base.pkg.kusion_models.kube.metadata
-import base.pkg.kusion_clouds.aws_backend.aws_config
+import konfig.base.pkg.kusion_models.kube.frontend
+import konfig.base.pkg.kusion_models.kube.frontend.storage
+import konfig.base.pkg.kusion_models.kube.metadata
+import konfig.base.pkg.kusion_clouds.aws_backend.aws_config
 
 # The application configuration in stack will overwrite 
 # the configuration with the same attribute in base.

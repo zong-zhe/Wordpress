@@ -4,7 +4,7 @@ edition = "0.0.1"
 version = "0.0.1"
 
 [dependencies]
-konfig = { git = "https://github.com/KusionStack/konfig.git", tag = "v0.1.0" }
+konfig = { git = "https://github.com/zong-zhe/konfig.git", tag = "0.0.2" }
 
 [profile]
 entries = [
