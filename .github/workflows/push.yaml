@@ -24,15 +24,10 @@ jobs:
         run: echo ${{ secrets.GHCR_TOKEN }}
         working-directory: ${{ github.workspace }}
 
-      - name: Set environment variables
+      - name: Push kpm project
         env:
           KPM_REG: "ghcr.io"
           KPM_REPO: "zong-zhe"
-        run: |
-          echo "export KPM_REG=${KPM_REG}" >> $GITHUB_ENV
-          echo "export KPM_REPO=${KPM_REPO}" >> $GITHUB_ENV
-
-      - name: Push kpm project
         run: kpm push
 
       - name: Run kpm project
