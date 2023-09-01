@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Set up Go 1.20
+      - name: Set up Go 1.19
         uses: actions/setup-go@v2
         with:
-          go-version: 1.20
+          go-version: 1.19
 
       - name: Install kpm
         run: go install kcl-lang.io/kpm@latest
