@@ -24,7 +24,7 @@ jobs:
         env:
           KPM_REG: "ghcr.io"
           KPM_REPO: "zong-zhe"
-        run: kpm login -u zong-zhe -p ${{ secrets.GITHUB_TOKEN }} ghcr.io | kpm push
+        run: kpm login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io | kpm push
 
       - name: Run kpm project
         run: kpm run oci://ghcr.io/zong-zhe/wordpress --tag 0.0.3
