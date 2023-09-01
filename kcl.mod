@@ -1,7 +1,7 @@
 [package]
-name = "Wordpress"
+name = "wordpress"
 edition = "0.0.1"
-version = "0.0.1"
+version = "0.0.3"
 
 [dependencies]
 konfig = { git = "https://github.com/zong-zhe/konfig.git", tag = "0.0.2" }

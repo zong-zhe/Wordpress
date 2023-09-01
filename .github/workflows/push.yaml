@@ -31,4 +31,4 @@ jobs:
         run: kpm push
 
       - name: Run kpm project
-        run: kpm run oci://ghcr.io/zong-zhe/Wordpress --tag 0.0.1
+        run: kpm run oci://ghcr.io/zong-zhe/wordpress --tag 0.0.3
