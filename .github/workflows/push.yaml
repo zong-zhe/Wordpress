@@ -20,15 +20,11 @@ jobs:
       - name: Install kpm
         run: go install kcl-lang.io/kpm@latest
 
-      - name: kpm login
-        run: echo ${{ secrets.GHCR_TOKEN }}
-        working-directory: ${{ github.workspace }}
-
       - name: Push kpm project
         env:
           KPM_REG: "ghcr.io"
           KPM_REPO: "zong-zhe"
-        run: kpm push
+        run: echo ${{ secrets.GHCR_TOKEN }} | kpm login -u zong-zhe ghcr.io | kpm push
 
       - name: Run kpm project
         run: kpm run oci://ghcr.io/zong-zhe/wordpress --tag 0.0.3
