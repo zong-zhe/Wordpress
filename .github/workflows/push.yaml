@@ -1,0 +1,39 @@
+name: KPM Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Go 1.20
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.20
+
+      - name: Install kpm
+        run: go install kcl-lang.io/kpm@latest
+
+      - name: kpm login
+        run: echo ${{ secrets.GHCR_TOKEN }}
+        working-directory: ${{ github.workspace }}
+
+      - name: Set environment variables
+        env:
+          KPM_REG: "ghcr.io"
+          KPM_REPO: "zong-zhe"
+        run: |
+          echo "export KPM_REG=${KPM_REG}" >> $GITHUB_ENV
+          echo "export KPM_REPO=${KPM_REPO}" >> $GITHUB_ENV
+
+      - name: Push kpm project
+        run: kpm push
+
+      - name: Run kpm project
+        run: kpm run oci://ghcr.io/zong-zhe/Wordpress --tag 0.0.1
